@@ -19,8 +19,9 @@ const links = ref([
     content: "third",
   },
 ])
-function selectlink(link){
+function selectlink(link, e){
 content.value = link.content
+e.preventDefault()
 }
 const content = ref("")
 content.value = links.value[0].content
@@ -30,7 +31,7 @@ content.value = links.value[0].content
 
   <main>
     <sidebar>
-      <a v-for="link in links" @click="selectlink(link)" href="#">{{ link.name }}</a>
+      <a v-for="link in links" @click="selectlink(link, $event)" href="#">{{ link.name }}</a>
     </sidebar>
     <content>{{ content }}</content>
   </main>
