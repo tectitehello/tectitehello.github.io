@@ -27,3 +27,16 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+
+
+
+# How to make changes to website
+
+* Make changes
+* Run `npm run dev` to preview changes
+* Once you are happy, run `npm run build`
+* Then `git add -p` to select the files to commit
+* `git commit -m 'Saving changes'` to commit the changes
+* `git push origin main` to publish the changes to the website.
