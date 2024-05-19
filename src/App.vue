@@ -20,35 +20,36 @@ const links = ref([
   },
 ])
 function selectlink(link, e){
-content.value = link.content
-e.preventDefault()
+  content.value = link.content
+  e.preventDefault()
 }
 const content = ref("")
 content.value = links.value[0].content
 </script>
 
 <template>
-
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/about">Go to About</RouterLink>
+    <RouterLink to="/videos">Go to Videos</RouterLink>
+  </nav>
   <main>
-    <sidebar>
-      <a v-for="link in links" @click="selectlink(link, $event)" href="#">{{ link.name }}</a>
-    </sidebar>
-    <content>{{ content }}</content>
+    <RouterView />
   </main>
-
 </template>
 
 <style scoped>
-sidebar {
+nav {
   display: flex;
   flex-direction: column;
   width: 100px;
 }
-sidebar a {
+nav a {
   margin: 4px 0;
 }
-main {
+main { 
   display: flex;
+  flex-direction: column;
   width: 600px;
 }
 content {
