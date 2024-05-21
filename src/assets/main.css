@@ -29,11 +29,4 @@ a,
   body {
     display: flex;
   }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    padding: 0 2rem;
-    margin-top: 5rem;
-  }
 }
